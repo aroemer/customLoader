@@ -37,23 +37,24 @@ extension UIImage {
     public class func gif(data: Data) -> UIImage? {
         // Create source from data
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
-            print("SwiftGif: Source for the image does not exist")
+            print("Source for the image does not exist")
             return nil
         }
         
         return UIImage.animatedImageWithSource(source)
     }
     
+    // Gif from url
     public class func gif(url: String) -> UIImage? {
         // Validate URL
         guard let bundleURL = URL(string: url) else {
-            print("SwiftGif: This image named \"\(url)\" does not exist")
+            print("This image named \"\(url)\" does not exist")
             return nil
         }
         
         // Validate data
         guard let imageData = try? Data(contentsOf: bundleURL) else {
-            print("SwiftGif: Cannot turn image named \"\(url)\" into NSData")
+            print("Cannot turn image named \"\(url)\" into NSData")
             return nil
         }
         
@@ -62,15 +63,14 @@ extension UIImage {
     
     public class func gif(name: String) -> UIImage? {
         // Check for existance of gif
-        guard let bundleURL = Bundle.main
-            .url(forResource: name, withExtension: "gif") else {
-                print("SwiftGif: This image named \"\(name)\" does not exist")
+        guard let bundleURL = Bundle.main.url(forResource: name, withExtension: "gif") else {
+                print("This image named \"\(name)\" does not exist")
                 return nil
         }
         
         // Validate data
         guard let imageData = try? Data(contentsOf: bundleURL) else {
-            print("SwiftGif: Cannot turn image named \"\(name)\" into NSData")
+            print("Cannot turn image named \"\(name)\" into NSData")
             return nil
         }
         
@@ -81,10 +81,9 @@ extension UIImage {
     public class func gif(asset: String) -> UIImage? {
         // Create source from assets catalog
         guard let dataAsset = NSDataAsset(name: asset) else {
-            print("SwiftGif: Cannot turn image named \"\(asset)\" into NSDataAsset")
+            print("Cannot turn image named \"\(asset)\" into NSDataAsset")
             return nil
         }
-        
         return gif(data: dataAsset.data)
     }
     
@@ -101,19 +100,17 @@ extension UIImage {
         let gifProperties:CFDictionary = unsafeBitCast(gifPropertiesPointer.pointee, to: CFDictionary.self)
         
         // Get delay time
-        var delayObject: AnyObject = unsafeBitCast(
-            CFDictionaryGetValue(gifProperties,
-                                 Unmanaged.passUnretained(kCGImagePropertyGIFUnclampedDelayTime).toOpaque()),
+        var delayObject: AnyObject = unsafeBitCast(CFDictionaryGetValue(gifProperties,
+                Unmanaged.passUnretained(kCGImagePropertyGIFUnclampedDelayTime).toOpaque()),
             to: AnyObject.self)
         if delayObject.doubleValue == 0 {
-            delayObject = unsafeBitCast(CFDictionaryGetValue(gifProperties,
-                                                             Unmanaged.passUnretained(kCGImagePropertyGIFDelayTime).toOpaque()), to: AnyObject.self)
+            delayObject = unsafeBitCast(CFDictionaryGetValue(gifProperties, Unmanaged.passUnretained(kCGImagePropertyGIFDelayTime).toOpaque()), to: AnyObject.self)
         }
         
         delay = delayObject as? Double ?? 0
         
-        if delay < 0.1 {
-            delay = 0.1 // Make sure they're not too fast
+        if delay < 0.01 {
+            delay = 0.01 // Make sure they're not too fast
         }
         
         return delay
@@ -146,7 +143,7 @@ extension UIImage {
             rest = a! % b!
             
             if rest == 0 {
-                return b! // Found it
+                return b!
             } else {
                 a = b
                 b = rest
@@ -193,7 +190,6 @@ extension UIImage {
             for val: Int in delays {
                 sum += val
             }
-            
             return sum
         }()
         
@@ -211,10 +207,7 @@ extension UIImage {
                 frames.append(frame)
             }
         }
-        
-        // Heyhey
-        let animation = UIImage.animatedImage(with: frames,
-                                              duration: Double(duration) / 1000.0)
+        let animation = UIImage.animatedImage(with: frames, duration: Double(duration) / 1000.0)
         
         return animation
     }

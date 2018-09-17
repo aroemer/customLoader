@@ -14,7 +14,8 @@
 		760E4FF4214EBC0000AE61C9 /* UIImage + Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760E4FF3214EBC0000AE61C9 /* UIImage + Gif.swift */; };
 		760E4FF6214EBDA500AE61C9 /* customLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760E4FF5214EBDA500AE61C9 /* customLoader.swift */; };
 		760E4FF8214EBE8600AE61C9 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760E4FF7214EBE8600AE61C9 /* Service.swift */; };
-		760E4FFA214EC34800AE61C9 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 760E4FF9214EC34700AE61C9 /* giphy.gif */; };
+		946FAEAE214FB1E100E5D057 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 946FAEAD214FB1E100E5D057 /* giphy.gif */; };
+		946FAEB0214FB2AE00E5D057 /* giphy2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 946FAEAF214FB2AE00E5D057 /* giphy2.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,8 @@
 		760E4FF3214EBC0000AE61C9 /* UIImage + Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Gif.swift"; sourceTree = "<group>"; };
 		760E4FF5214EBDA500AE61C9 /* customLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customLoader.swift; sourceTree = "<group>"; };
 		760E4FF7214EBE8600AE61C9 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		760E4FF9214EC34700AE61C9 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = giphy.gif; path = ../../../Downloads/giphy.gif; sourceTree = "<group>"; };
+		946FAEAD214FB1E100E5D057 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = giphy.gif; path = ../../../Downloads/giphy.gif; sourceTree = "<group>"; };
+		946FAEAF214FB2AE00E5D057 /* giphy2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = giphy2.gif; path = ../../Downloads/giphy2.gif; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,8 @@
 				760E4FF7214EBE8600AE61C9 /* Service.swift */,
 				760E4FF3214EBC0000AE61C9 /* UIImage + Gif.swift */,
 				760E4FE8214EBB3E00AE61C9 /* Assets.xcassets */,
-				760E4FF9214EC34700AE61C9 /* giphy.gif */,
+				946FAEAD214FB1E100E5D057 /* giphy.gif */,
+				946FAEAF214FB2AE00E5D057 /* giphy2.gif */,
 				760E4FEA214EBB3E00AE61C9 /* LaunchScreen.storyboard */,
 				760E4FED214EBB3E00AE61C9 /* Info.plist */,
 			);
@@ -132,7 +135,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				760E4FEC214EBB3E00AE61C9 /* LaunchScreen.storyboard in Resources */,
-				760E4FFA214EC34800AE61C9 /* giphy.gif in Resources */,
+				946FAEB0214FB2AE00E5D057 /* giphy2.gif in Resources */,
+				946FAEAE214FB1E100E5D057 /* giphy.gif in Resources */,
 				760E4FE9214EBB3E00AE61C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

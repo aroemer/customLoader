@@ -14,7 +14,7 @@ class CustomLoader: UIView {
     
     var viewColor: UIColor = .gray
     var setAlpha: CGFloat = 0.8
-    var gifName: String = "giphy"
+    var gifName: String = "giphy2"
     
     lazy var transparentView: UIView = ClosureService.shared.create {
         $0.frame = UIScreen.main.bounds
